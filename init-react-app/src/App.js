@@ -2,25 +2,56 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h2>{new Date().getFullYear()}</h2> {/* эта строчка написана декларативным стилем, всё остальное императивным*/}
-      </header>
-    </div>
-  );
+
+  const app = document.createElement('div')
+  app.className = 'App'
+  document.body.append(app)
+
+  const header = document.createElement('header')
+  header.className = 'App-header'
+  app.append(header)
+
+  const imgLogo = document.createElement('img')
+  imgLogo.src = logo
+  imgLogo.className = 'App-logo'
+  imgLogo.alt = 'logo'
+  header.append(imgLogo)
+
+  const p = document.createElement('p')
+  p.textContent = 'Edit src/App.js and save to reload.'
+  header.append(p)
+
+  const link = document.createElement('a')
+  link.className = 'App-link'
+  link.href = "https://reactjs.org"
+  link.target="_blank"
+  link.rel="noopener noreferrer"
+  link.textContent = 'Learn React'
+  header.append(link)
+
+  const year = document.createElement('h2')
+  year.textContent = new Date().getFullYear()
+  header.append(year)
+
+  // return (
+  //   <div className="App">
+  //     <header className="App-header">
+  //       <img src={logo} className="App-logo" alt="logo" />
+  //       <p>
+  //         Edit <code>src/App.js</code> and save to reload.
+  //       </p>
+  //       <a
+  //         className="App-link"
+  //         href="https://reactjs.org"
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  //       >
+  //         Learn React
+  //       </a>
+  //       <h2>{new Date().getFullYear()}</h2>
+  //     </header>
+  //   </div>
+  // );
 }
 
 export default App;
